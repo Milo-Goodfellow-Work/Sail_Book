@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = hidden_settings.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -148,3 +148,13 @@ EMAIL_HOST = hidden_settings.EMAIL_HOST
 EMAIL_HOST_USER = hidden_settings.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = hidden_settings.EMAIL_HOST_PASSWORD
 EMAIL_PORT = hidden_settings.EMAIL_PORT
+
+'''Security'''
+#Redirect all users to the SSL enabled version of the site
+SECURE_SSL_REDIRECT = True
+#Enable secure session cookies
+SESSION_COOKIE_SECURE = True
+#Enable secure CSRF cookies
+CSRF_COOKIE_SECURE = True
+#Configure the secure referrer policy: https://docs.djangoproject.com/en/3.0/ref/middleware/#referrer-policy
+SECURE_REFERRER_POLICY = 'same-origin'
