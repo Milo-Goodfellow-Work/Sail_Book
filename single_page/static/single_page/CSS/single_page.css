@@ -1,0 +1,320 @@
+/*Body primarily holds the default color used by all divs and doesn't require other styling*/
+html, body {
+  background-color: #F6F6F6;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+
+}
+
+img {
+  object-fit: cover;
+
+}
+
+.desktop-change {
+
+
+}
+
+.input-box {
+  resize: none;
+  max-height: 2.5em;
+
+}
+
+.surface {
+  background-color: #F6F6F6;
+  border: none;
+  border-radius: 1em;
+  box-shadow: -6px -6px 16px #FFFFFF, 6px 6px 16px #BECDE2;
+
+}
+
+.internal-content {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0; left: 0; right: 0;
+
+}
+
+.branding-content {
+  height: 5em;
+  width: 92.5%;
+
+}
+
+.listing {
+  position: relative;
+  margin-bottom: 1em;
+
+}
+
+.create-listing-content {
+  height: 32.1em;
+  width: 92.5%;
+
+}
+
+.listing-list-content {
+  height: 48em;
+  width: 95%;
+
+}
+
+.logo-icon {
+  width: 5em;
+  height: 5em;
+  float: left;
+
+}
+
+.header-text {
+  color: #456078;
+
+  font-size: 2.5em;
+  font-family: 'Raleway';
+  font-weight: bold;
+
+  bottom: 0em;
+  margin-bottom: 0em;
+
+}
+
+.text-content {
+  /*background-color: yellow;*/
+  color: #9C9C9C;
+  width: 19em;
+  margin-left: 6em;
+  height: 100%;
+
+}
+
+.sub-header-text {
+  font-family: 'Roboto';
+  font-weight: normal;
+  position: relative;
+  font-size: 1.3em;
+  top: 0;
+  margin-bottom: 0;
+  word-break: break-all;
+
+}
+
+.custom-header {
+  color: #456078;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: 'Raleway';
+
+}
+
+.full-btn {
+  width: 100%;
+  background-color: #42A5F5;
+  border: none;
+  font-family: 'Roboto';
+  font-size: 2em;
+
+}
+
+.listing-region {
+  position:relative;
+  margin-top: 1em;
+  overflow: visible;
+  max-height: 80%;
+  overflow: auto;
+
+}
+
+.fixed {
+  position: fixed;
+  width: inherit;
+  max-width: 28em;
+  background-color: yellow;
+
+}
+
+.no-resize {
+  resize: none;
+
+}
+
+.mobile-main-content {
+  background-color: red;
+  width: 42em;
+
+}
+
+#mobile-main-surface {
+  position: relative;
+  min-height: 37.5em;
+  width: 100%;
+  margin-top: 1em;
+  visibility: hidden;
+  display: none;
+  padding-bottom: 1em;
+
+}
+
+#create-listing-surface {
+  position: relative;
+
+  margin-top: 1em;
+
+  height: 35em;
+  width: 100%;
+
+}
+
+#branding-surface {
+  position: relative;
+
+  margin-top: 1em;
+
+  height: 7em;
+  width: 100%;
+
+}
+
+#listing-list {
+  position: relative;
+
+  margin-top: 1em;
+
+  height: 50em;
+
+
+}
+
+#mobile-buy {
+    max-height: 33em;
+    overflow: auto;
+
+}
+
+.mobile-content {
+  max-width: 92.5%;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  top: 1em;
+
+}
+
+.listing-image {
+  height: 10em;
+  width: 100%;
+
+}
+
+.swiper-slide {
+  max-height: 25em;
+
+}
+
+.swiper-pagination {
+  background-color: #F6F6F6;
+  box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.3), inset 6px 6px 16px rgba(190, 205, 226, 0.3);
+  position: relative;
+  margin: auto !important;
+  bottom: 3em !important;
+  max-width: 3em;
+  color: black;
+  border-radius: 0.3em;
+  height: 1.75em;
+
+}
+
+.listing-body {
+  margin-top: -2em !important;
+  top: 0em !important;
+
+}
+
+@media only screen and (max-width: 1199px){
+  .sub-header-text{
+    max-width: 10em;
+    height: 3em;
+
+  }
+
+  .branding-content {
+    height: 6.9em;
+    width: 92.5%;
+
+  }
+
+  #branding-surface {
+    height: 9em;
+
+  }
+
+}
+
+.desktop-change {
+  display: block !important;
+
+}
+
+.field-error {
+  margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  position: relative;
+  width: 100%;
+
+}
+
+.error-surface {
+  position: relative;
+  top: 1em;
+  padding: 1em;
+
+}
+
+.error-surface:empty {
+  display: none;
+  visibility: hidden;
+
+}
+
+@media only screen and (max-width: 991px){
+  .desktop-change {
+    display: none !important;
+    height: 0em !important;
+    visibility: hidden !important;
+
+  }
+
+  #mobile-main-surface {
+    visibility: visible;
+    display: block;
+
+  }
+
+}
+
+@media only screen and (max-width: 350px) {
+  #branding-surface {
+    height: 10em;
+
+  }
+
+  .sub-header-text {
+    max-width: 7.9em;
+
+  }
+
+  #description-box {
+    min-height: 4em;
+
+  }
+
+  #mobile-main-surface {
+    min-height: 40em;
+
+  }
+}

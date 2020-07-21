@@ -1,0 +1,195 @@
+{% extends 'single_page/base.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block head %}
+  <!--Page title-->
+  <title>SailBook</title>
+  <!--Page CSS-->
+  <link rel="stylesheet" href="{% static 'single_page/CSS/single_page.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row"">
+
+    <div class="col-lg-5 col-md-12">
+
+        <div class="surface" id="branding-surface">
+          <a href="{% url 'single_page:single_page' %}">
+            <div class="branding-content internal-content">
+
+              <img class="logo-icon" src="{% static 'single_page/images/logo.png' %}" />
+
+              <div class="text-content">
+                <h1 class="header-text">SailBook</h1>
+                <p class="sub-header-text">Purchase or sell used textbooks.</p>
+              </div>
+
+            </div>
+          <a href="">
+        </div>
+
+        <div class="surface" id="mobile-main-surface">
+          <ul class="nav nav-pills">
+              <li class="nav-item">
+                  <a href="#mobile-buy" class="nav-link active" data-toggle="tab">Buy</a>
+              </li>
+
+              <li class="nav-item">
+                  <a href="#mobile-sell" class="nav-link" data-toggle="tab">Sell</a>
+              </li>
+          </ul>
+
+          <div class="tab-content">
+
+              <div class="tab-pane fade show active mobile-content" id="mobile-buy">
+                <h1 class="custom-header">
+                  Tour:
+                </h1>
+
+                <input type="text" class="form-control form-control-lg input-box search-input" placeholder="Search"></input>
+
+                <div class="listing-region">
+
+                  {% for listing in listings reversed %}
+
+                    <div class="card listing">
+                      <div class="swiper-container card-img top">
+                        <div class="swiper-wrapper swiper-wrapper-contain">
+                          <div class="swiper-slide"><img class="listing-image" src="{% static 'single_page/images/slide_show_image_one.png' %}" /></div>
+                          <div class="swiper-slide"><img class="listing-image" src="{% static 'single_page/images/slide_show_image_one.png' %}" /></div>
+                          <div class="swiper-slide"><img class="listing-image" src="{% static 'single_page/images/slide_show_image_one.png' %}" /></div>
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+
+                      </div>
+                      <div class="card-body listing-body">
+                        <h5>{{ listing.title }} <span style="float: right;">${{ listing.price }}</span></h5>
+                        <p class="card-text"><b>Contact: {{ listing.email }}</b><br/> {{ listing.description }}</p>
+                      </div>
+                    </div>
+
+                  {% endfor %}
+
+                </div>
+              </div>
+
+              <div class="tab-pane fade mobile-content" id="mobile-sell">
+
+              </div>
+
+          </div>
+        </div>
+
+
+        <div class="surface desktop-change" id="create-listing-surface">
+          <div class="create-listing-content internal-content" id="desktop-sell">
+            <h1 class="custom-header">
+              Post a listing:
+            </h1>
+
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <div class="form-group">
+                {% render_field form.title class+="form-control form-control-lg input-box" placeholder="The title of the textbook" %}
+              </div>
+
+              <div class="form-group">
+                {% render_field form.description class+="form-control form-control-lg input-box" placeholder="A description of the textbook" id="description-box" %}
+              </div>
+
+              <div class="form-group">
+                {% render_field form.email class+="form-control form-control-lg input-box" placeholder="To list publicly with the textbook, your email" %}
+              </div>
+
+              <div class="form-group">
+                {% render_field form.price class+="form-control form-control-lg input-box" placeholder="The price of your textbook in CDN" %}
+              </div>
+
+              <div class="form-group">
+                <div class="custom-file">
+                  {% render_field form.image_one type="file" class+="custom-file-input" id="image_upload_one"%}
+                  <label class="custom-file-label" for="image_upload_one">Upload the first display image</label>
+                  <div class="invalid-feedback">Invalid file</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="custom-file">
+                  {% render_field form.image_two type="file" class+="custom-file-input" id="image_upload_two"%}
+                  <label class="custom-file-label" for="image_upload_two">Upload the second display image</label>
+                  <div class="invalid-feedback">Invalid file</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="custom-file">
+                  {% render_field form.image_three type="file" class+="custom-file-input" id="image_upload_three" %}
+                  <label class="custom-file-label" for="image_upload_three">Upload the third display image</label>
+                  <div class="invalid-feedback">Invalid file</div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary full-btn">Submit</button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+        <div class="surface error-surface desktop-change">{% for field in form %}{% for error in field.errors %}<div class="alert alert-danger field-error" role="alert">{{ error }}</div>{% endfor %}{% endfor %}</div>
+
+    </div>
+
+    <div class="col-sm-7 col-lg-offset-3 desktop-change">
+      <div id="listing-list">
+        <div class="internal-content listing-list-content" id="desktop-buy">
+          <h1 class="custom-header">
+            Tour:
+          </h1>
+
+          <input type="text" class="form-control form-control-lg input-box search-input" placeholder="Search"></input>
+
+          <div class="listing-region">
+
+            {% for listing in listings reversed %}
+
+              <div class="card listing">
+                <div class="swiper-container card-img top">
+                  <div class="swiper-wrapper swiper-wrapper-contain">
+                    <div class="swiper-slide"><img src="http://127.0.0.1:8000/media/{{ listing.image_one }}" class="swiper-slide"/></div>
+                    <div class="swiper-slide"><img src="http://127.0.0.1:8000/media/{{ listing.image_two }}" class="swiper-slide"/></div>
+                    <div class="swiper-slide"><img src="http://127.0.0.1:8000/media/{{ listing.image_three }}" class="swiper-slide"/></div>
+                  </div>
+
+                  <div class="swiper-pagination"></div>
+
+                </div>
+                <div class="card-body listing-body">
+                  <h5>{{ listing.title }} <span style="float: right;">${{ listing.price }}</span></h5>
+                  <p class="card-text"><b>Contact: {{ listing.email }}</b><br/> {{ listing.description }}</p>
+                </div>
+              </div>
+
+            {% endfor %}
+
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'single_page/javascript/single_page.js' %}"></script>
+{% endblock %}
