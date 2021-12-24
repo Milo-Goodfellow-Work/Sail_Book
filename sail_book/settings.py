@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'sail_book.urls'
@@ -88,8 +89,8 @@ DATABASES = {
         'NAME': hidden_settings.DATABASE_NAME,
         'USER': hidden_settings.DATABASE_USER,
         'PASSWORD': hidden_settings.DATABASE_PASSWORD,
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': hidden_settings.DATABASE_HOST,
+        'PORT': hidden_settings.DATABASE_PORT,
     }
 }
 
@@ -141,6 +142,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 
 )
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
