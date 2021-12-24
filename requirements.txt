@@ -4,7 +4,6 @@ django-widget-tweaks==1.4.8
 gunicorn==20.0.4
 Pillow==7.2.0
 psycopg2==2.8.5
-py-mini-racer==0.3.0
 pytz==2020.1
 sq-native==0.6.1.0.1
 sqlparse==0.3.1
