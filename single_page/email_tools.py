@@ -1,7 +1,7 @@
 # from listings.models import listing
 from sail_book.settings import hidden_settings
 from django.core.mail import send_mail
-import smtpLib
+import smtplib
 
 
 def send_controls(new_listing):
@@ -20,5 +20,5 @@ def send_controls(new_listing):
                 fail_silently=False)
 
         return True
-    except smtpLib.SMTPException:
+    except smtplib.SMTPException:
         return False
