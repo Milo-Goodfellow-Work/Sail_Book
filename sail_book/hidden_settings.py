@@ -1,3 +1,5 @@
+import os
+
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DATABASE_NAME = os.environ.get('DATABASE_NAME')
 DATABASE_USER = os.environ.get('DATABASE_USER')
