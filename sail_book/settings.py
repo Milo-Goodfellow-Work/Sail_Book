@@ -39,13 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
 
-    #Custom apps
+    # Custom apps
     'users',
     'single_page',
     'listings',
 ]
 
-#Custom user model
+# Custom user model
 AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
@@ -99,16 +99,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
     },
 ]
 
@@ -141,8 +145,6 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-
 EMAIL_USE_TLS = hidden_settings.EMAIL_USE_TLS
 EMAIL_HOST = hidden_settings.EMAIL_HOST
 EMAIL_HOST_USER = hidden_settings.EMAIL_HOST_USER
@@ -150,11 +152,11 @@ EMAIL_HOST_PASSWORD = hidden_settings.EMAIL_HOST_PASSWORD
 EMAIL_PORT = hidden_settings.EMAIL_PORT
 
 '''Security'''
-#Redirect all users to the SSL enabled version of the site
+# Redirect all users to the SSL enabled version of the site
 SECURE_SSL_REDIRECT = True
-#Enable secure session cookies
+# Enable secure session cookies
 SESSION_COOKIE_SECURE = True
-#Enable secure CSRF cookies
+# Enable secure CSRF cookies
 CSRF_COOKIE_SECURE = True
-#Configure the secure referrer policy: https://docs.djangoproject.com/en/3.0/ref/middleware/#referrer-policy
+# Configure the secure referrer policy
 SECURE_REFERRER_POLICY = 'same-origin'

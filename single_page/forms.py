@@ -1,17 +1,25 @@
 from django import forms
 from django.forms import ModelForm
-from django.utils.safestring import mark_safe
-from django.core.exceptions import ValidationError
+# from django.utils.safestring import mark_safe
+# rom django.core.exceptions import ValidationError
 
 
 from listings.models import listing
 
+
 class ListingForm(ModelForm):
     class Meta():
         model = listing
-        fields = ['title', 'description', 'price', 'email', 'image_one', 'image_two', 'image_three']
+        fields = ['title',
+                  'description',
+                  'price',
+                  'email',
+                  'image_one',
+                  'image_two',
+                  'image_three']
         widgets = {
-            'description' : forms.Textarea(attrs = {'class' : 'materialize-textarea'}),
+            'description': forms.Textarea(
+                                attrs={'class': 'materialize-textarea'}),
 
         }
 
@@ -29,7 +37,6 @@ class ListingForm(ModelForm):
         if image_two:
             if image_two.size > 4*1024*1024:
                 self.add_error("image_two", "The second image exceeds 4mb.")
-
 
         if image_three:
             if image_three.size > 4*1024*1024:
