@@ -9,8 +9,8 @@ def send_controls(new_listing):
         email_body = '''
             We have created your listing!
             If you wish to delete it,
-            this can be done at:\n http://127.0.0.1:8000/delete/
-        ''' + new_listing.public_token
+            this can be done at:\n {}{}'''.format(hidden_settings.BASE_URL,
+                                                  new_listing.public_token)
 
         send_mail(
                 'We have created your listing!',

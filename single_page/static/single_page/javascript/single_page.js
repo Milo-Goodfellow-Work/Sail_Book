@@ -43,7 +43,7 @@ $(document).ready(function(){
 
 
 $(".search-input").on("change enter", function(){
-  window.location.href = ("http://127.0.0.1:8000/" + ($(this).val()));
+  window.location.href = (window.location.origin + ($(this).val()));
 
 })
 

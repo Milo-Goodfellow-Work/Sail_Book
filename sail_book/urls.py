@@ -18,9 +18,11 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from sail_book import settings
 
+
+app_name = 'root_app'
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('single_page.urls'))
+    path('', include('single_page.urls'), name='root_url')
 
 ]
 
