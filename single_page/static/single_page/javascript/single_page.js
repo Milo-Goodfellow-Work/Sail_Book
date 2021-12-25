@@ -2,8 +2,9 @@ $(document).ready(function(){
 
   //Switch each media image to GET from the current url
   let slides = document.getElementsByClassName("swiper-slide");
-  for(i in slides){
-    slides[i].src = window.location.origin + slides[i].src;
+  slides = new Set(slides);
+  for(let i of slides.keys()){
+    i.src = window.location.origin + slides[i].src;
   }
 
   if($(window).width()<992)
