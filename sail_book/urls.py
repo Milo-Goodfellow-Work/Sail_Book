@@ -21,7 +21,7 @@ from sail_book import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('single_page.urls'), name='root_url')
+    path('', include('single_page.urls'))
 
 ]
 
