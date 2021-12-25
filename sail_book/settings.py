@@ -23,7 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = hidden_settings.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+# DON'T LEAVE THIS ENABLED IN PRODUCTION
+DEMO_PROJECT = True
 
 ALLOWED_HOSTS = ['*']
 
