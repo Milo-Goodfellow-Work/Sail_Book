@@ -42,7 +42,7 @@ $(document).ready(function(){
 
 
 $(".search-input").on("change enter", function(){
-  window.location.href = (window.location.origin + ($(this).val()));
+  url.searchParams.set('search',($(this).val())));
 
 })
 
