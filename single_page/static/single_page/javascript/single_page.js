@@ -1,13 +1,4 @@
 $(document).ready(function(){
-
-  //Switch each media image to GET from the current url
-  let slides = document.getElementsByClassName("swiper-slide");
-  for(i in slides){
-    if(!(window.location.origin in slides[i].src)){
-      slides[i].src = window.location.origin + slides[i].src;
-    }
-  }
-
   if($(window).width()<992)
   {
     $('#mobile-sell').append($("#desktop-sell").html());
