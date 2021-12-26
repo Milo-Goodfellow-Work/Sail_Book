@@ -12,7 +12,7 @@ from .email_tools import send_controls
 
 # Create your views here.
 def single_page_view(request):
-    if search is None:
+    if request.GET.get('search') is None:
         if request.method == "POST":
             form = ListingForm(request.POST, request.FILES)
             if form.is_valid():
