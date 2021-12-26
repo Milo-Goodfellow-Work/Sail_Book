@@ -41,7 +41,7 @@ $(document).ready(function(){
   $(".search-input").on("change enter", function(){
     console.log('Test');
     search_params = new URLSearchParams(window.location.href);
-    search_params.set('search'=(document.getElementByClassName(".search-input").innerHTML).split(' ').join('_');
+    search_params.set('search',(document.getElementByClassName(".search-input").innerHTML).split(' ').join('_');
     window.location.href.replace(window.location.href + '/?'${search_params.toString()});
 
   })
