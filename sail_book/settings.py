@@ -87,7 +87,6 @@ WSGI_APPLICATION = 'sail_book.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # Use this for a production Postgresql server
-'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -98,16 +97,6 @@ DATABASES = {
         'PORT': hidden_settings.DATABASE_PORT,
     }
 }
-'''
-
-# ONLY FOR DEMO WEBSITE, DO NOT USE IN PRODUCTION
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 
 
 # Password validation
