@@ -42,7 +42,7 @@ $(document).ready(function(){
     console.log('Test');
     search_params = new URLSearchParams(window.location.href);
     search_params.set('search',(document.getElementByClassName(".search-input").innerHTML).split(' ').join('_'));
-    window.location.href.replace(window.location.href + '/?'${search_params.toString()});
+    window.location.href.replace(window.location.href + '/?'+search_params.toString());
 
   })
 
