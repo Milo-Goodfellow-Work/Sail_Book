@@ -11,7 +11,7 @@ from .email_tools import send_controls
 
 
 # Create your views here.
-def single_page_view(request, search=None):
+def single_page_view(request):
     if search is None:
         if request.method == "POST":
             form = ListingForm(request.POST, request.FILES)
@@ -29,7 +29,7 @@ def single_page_view(request, search=None):
                                                                 'email',
                                                                 'public'
                                                                 '_token'))
-        listings = listings.filter(search=search)
+        listings = listings.filter(search=request.GET.get('search'))
 
     form = ListingForm()
     return render(request,
