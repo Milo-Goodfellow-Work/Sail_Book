@@ -38,13 +38,15 @@ $(document).ready(function(){
 
   })
 
+  $(".search-input").on("change enter", function(){
+    console.log('Test');
+    search_params = new URLSearchParams(window.location.href);
+    search_params.set('search'=(document.getElementByClassName(".search-input").innerHTML).split(' ').join('_');
+    window.location.href.replace(window.location.href + '/?'${search_params.toString()});
+
+  })
+
 });
-
-
-$(".search-input").on("change enter", function(){
-  url.searchParams.set('search',($(this).val())));
-
-})
 
 var slideSwiper = new Swiper('.swiper-container', {
   navigation: {
