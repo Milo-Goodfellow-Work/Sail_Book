@@ -43,7 +43,7 @@ $(document).ready(function(){
     search_params = new URLSearchParams(window.location.href);
 
     search_params.set('search',document.getElementById("search-input-large").innerHTML.split(' ').join('_'));
-    window.location.href.replace(window.location.href + '/?'+search_params.toString());
+    window.location.replace(window.location.href + '/?'+search_params.toString());
 
   })
 
@@ -52,7 +52,7 @@ $(document).ready(function(){
     search_params = new URLSearchParams(window.location.href);
 
     search_params.set('search',document.getElementById("search-input-small").innerHTML.split(' ').join('_'));
-    window.location.href.replace(window.location.href + '/?'+search_params.toString());
+    window.location.replace(window.location.href + '/?'+search_params.toString());
 
   })
 
