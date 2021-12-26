@@ -41,7 +41,7 @@ $(document).ready(function(){
   $("#search-input-large").on("change enter", function(){
     console.log('Test');
     new_url = new URL(window.location.origin);
-    url.append('search',document.getElementById("search-input-large").value.split(' ').join('_'));
+    new_url.append('search',document.getElementById("search-input-large").value.split(' ').join('_'));
     window.location.replace(new_url.href);
 
   })
@@ -49,7 +49,7 @@ $(document).ready(function(){
   $("#search-input-small").on("change enter", function(){
     console.log('Test');
     new_url = new URL(window.location.origin);
-    url.append('search',document.getElementById("search-input-small").value.split(' ').join('_'));
+    new_url.append('search',document.getElementById("search-input-small").value.split(' ').join('_'));
     window.location.replace(new_url.href);
 
   })
