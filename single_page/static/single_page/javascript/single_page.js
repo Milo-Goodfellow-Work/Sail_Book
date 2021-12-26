@@ -38,10 +38,20 @@ $(document).ready(function(){
 
   })
 
-  $(".search-input").on("change enter", function(){
+  $("#search-input-large").on("change enter", function(){
     console.log('Test');
     search_params = new URLSearchParams(window.location.href);
-    search_params.set('search',(document.getElementsByClassName(".search-input").innerHTML)[0].split(' ').join('_'));
+
+    search_params.set('search',document.getElementById("search-input-large").innerHTML.split(' ').join('_'));
+    window.location.href.replace(window.location.href + '/?'+search_params.toString());
+
+  })
+
+  $("#search-input-small").on("change enter", function(){
+    console.log('Test');
+    search_params = new URLSearchParams(window.location.href);
+
+    search_params.set('search',document.getElementById("search-input-small").innerHTML.split(' ').join('_'));
     window.location.href.replace(window.location.href + '/?'+search_params.toString());
 
   })
